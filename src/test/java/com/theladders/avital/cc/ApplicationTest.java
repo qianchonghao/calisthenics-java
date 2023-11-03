@@ -1,5 +1,9 @@
 package com.theladders.avital.cc;
 
+import com.theladders.avital.cc.service.Application;
+import com.theladders.avital.cc.service.ApplicationManager;
+import com.theladders.avital.cc.service.JobManager;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +16,8 @@ import static org.junit.Assert.assertThat;
 
 public class ApplicationTest {
     Application application;
+    ApplicationManager applicationManager;
+    JobManager jobManager;
 
     private ArrayList<String> createNewJob(String jobName, String jobType, String employerName, String applicationTime) {
         return new ArrayList<String>() {{
@@ -33,6 +39,8 @@ public class ApplicationTest {
     @Before
     public void setUp() throws Exception {
         application = new Application();
+        applicationManager = new ApplicationManager();
+        jobManager = new JobManager();
     }
 
     @Test
